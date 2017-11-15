@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
-import { Header, Body, Title, Icon, Container, Button, List, ListItem, Content, Left, Right,Card,CardItem } from 'native-base';
+import { Header, Body, Title, Icon, Container, Button, List, ListItem, Content, Left, Right, Card, CardItem, Grid, Col  } from 'native-base';
 import ImageSlider from 'react-native-image-slider';
 import call from 'react-native-phone-call';
 import styles from "../styles";
@@ -105,28 +105,34 @@ export default class Interior extends Component{
                     }>
                 </List>
 
-                <Card>
-                    <CardItem>
-                    <Body>
-                        <Text>Descripción:</Text>
-                        <Text>
-                            {this.state.descripcion}
-                        </Text>
-                    </Body>
-                    </CardItem>
-                </Card>
+                <List>
+                    <ListItem itemDivider>
+                    <Text>Descripción</Text>
+                    </ListItem>
+                </List>
+
+                <Text style={{padding:20}}>
+                    {this.state.descripcion}
+                </Text>
 
             </View>
             <View>
-                <Button iconLeft full style={{padding:20,height:60,backgroundColor:"#16a085"}} onPress={() => call({number:this.state.phone,prompt:false})}>
-                    <Icon name='call' style={{color:"#ffffff"}}/>   
-                </Button>
+
+                <Grid style={{marginTop:10}}>
+                    <Col>
+                        <Button iconLeft full style={{padding:20,height:60,backgroundColor:"#16a085"}} onPress={() => call({number:this.state.phone,prompt:true})}>
+                            <Icon name='call' style={{color:"#ffffff"}}/>   
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Button iconLeft full info style={{padding:20,height:60}}>
+                            <Icon name='mail' style={{color:"#ffffff"}}/>   
+                        </Button>
+                    </Col>
+                </Grid>
+                
             </View>
-            <View>
-                <Button iconLeft full info style={{padding:20,height:60}}>
-                    <Icon name='mail' style={{color:"#ffffff"}}/>   
-                </Button>
-            </View>
+
           </ScrollView>
         )
       }

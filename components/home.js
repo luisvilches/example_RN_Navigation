@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { Header, Body, Title, Icon, Tab, Tabs, TabHeading, Button, List, ListItem, Thumbnail, Grid, Col } from 'native-base';
 import styles from "../styles";
 
+
 // components
 
 import Independientes from "./independientes";
@@ -14,10 +15,7 @@ export default class Home extends Component {
         headerTitle: 'Satisfy',
         headerRight: <Grid style={{marginTop:10}}>
           <Col>
-            <Button onPress={() => navigation.navigate('Config')} transparent><Icon name="settings" style={styles.colorTabsFont} /></Button>
-          </Col>
-          <Col>
-            <Button onPress={() => navigation.navigate('Config')} transparent><Icon name="refresh" style={styles.colorTabsFont} /></Button>
+            <Button onPress={() => navigation.navigate('Config')} transparent><Icon name="options" style={styles.colorTabsFont} /></Button>
           </Col>
         </Grid>,
         headerTintColor: "#f0f0f0",

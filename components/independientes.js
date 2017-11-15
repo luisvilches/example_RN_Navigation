@@ -23,7 +23,22 @@ export default class Independientes extends Component{
         <View style={styles.container}>
           <List dataArray={this.state.data}
               renderRow={(item) =>
-                <ListItem onPress={() => this.props.navigate('Interior',{name:item.name,price:item.price,photos:item.photos,description:item.description,avatar:item.avatar})}>
+                <ListItem onPress={() => this.props.navigate('Interior',{
+                  name: item.name,
+                  price: item.price,
+                  photos: item.photos,
+                  description: item.description,
+                  phone: item.phone,
+                  services: item.services,
+                  horario: item.horario,
+                  rank: item.rank,
+                  gender: item.gender,
+                  alt: item.alt,
+                  size: item.size,
+                  body:  item.body,
+                  age:item.age,
+                  atencion: item.atencion
+                })}>
                   <Thumbnail style={styles.avatar} square size={80} source={{ uri: item.avatar }} />
                   <Body>
                     <Text>{item.name}</Text>
